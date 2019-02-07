@@ -34,7 +34,7 @@ echo
 
 
 echo "### Starting nginx ..."
-sudo docker-compose up --force-recreate -d
+sudo docker-compose up --force-recreate -d nginx
 echo
 
 echo "### Deleting dummy certificate for $domains ..."
