@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx:
-    name: nginx
+    container_name: nginx
     image: nginx:1.15-alpine
     ports:
       - 80:80
@@ -14,7 +14,7 @@ services:
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 
   certbot:
-    name: certbot
+    container_name: certbot
     image: certbot/certbot
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
