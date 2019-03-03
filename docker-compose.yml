@@ -20,9 +20,9 @@ services:
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
   app:
-    depends_on:
-      - nginx
+    container_name: app
     image: qloud77/dital-laravel
+    ports: 80:8080
     networks:
       - dital
 
